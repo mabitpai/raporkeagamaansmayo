@@ -11,76 +11,32 @@
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
     body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; }
 
-    .rapor-sheet {
-      position: relative;
-      overflow: hidden;
-      background: #ffffff;
-    }
+    .rapor-sheet { position: relative; overflow: hidden; background: #ffffff; }
     .rapor-watermark {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      user-select: none;
-      z-index: 0;
-      overflow: hidden;
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; pointer-events: none;
+      user-select: none; z-index: 0; overflow: hidden;
     }
     .rapor-watermark-text {
-      transform: rotate(-32deg);
-      text-align: center;
-      color: rgba(15, 118, 110, 0.075);
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      line-height: 1.5;
-      text-transform: uppercase;
-      white-space: nowrap;
+      transform: rotate(-32deg); text-align: center; color: rgba(15, 118, 110, 0.075);
+      font-weight: 800; letter-spacing: 0.14em; line-height: 1.5; text-transform: uppercase; white-space: nowrap;
     }
-    .rapor-content {
-      position: relative;
-      z-index: 1;
-    }
-    .qr-box svg {
-      width: 60px;
-      height: 60px;
-      display: block;
-    }
+    .rapor-content { position: relative; z-index: 1; }
+    .qr-box svg { width: 60px; height: 60px; display: block; }
 
     @media print {
-      * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       body { background: white !important; margin: 0; padding: 0; }
       .no-print { display: none !important; }
       .print-only { display: block !important; }
       .rapor-page {
-        width: 210mm;
-        height: 297mm;
-        padding: 9mm 14mm;
-        margin: 0 auto;
-        box-shadow: none !important;
-        border: none !important;
-        font-size: 9.8pt;
-        color: #000 !important;
-        page-break-after: always;
-        break-after: page;
-        position: relative;
-        overflow: hidden;
-        box-sizing: border-box;
+        width: 210mm; height: 297mm; padding: 9mm 14mm; margin: 0 auto;
+        box-shadow: none !important; border: none !important; font-size: 9.8pt; color: #000 !important;
+        page-break-after: always; break-after: page; position: relative; overflow: hidden; box-sizing: border-box;
       }
-      .rapor-page:last-child {
-        page-break-after: auto;
-        break-after: auto;
-      }
+      .rapor-page:last-child { page-break-after: auto; break-after: auto; }
       table.print-table { border-collapse: collapse; width: 100%; }
-      table.print-table th, table.print-table td {
-        border: 1px solid #1e293b !important;
-        padding: 3px 6px !important;
-        font-size: 8.8pt !important;
-      }
+      table.print-table th, table.print-table td { border: 1px solid #1e293b !important; padding: 3px 6px !important; font-size: 8.8pt !important; }
       @page { size: A4 portrait; margin: 0; }
     }
   </style>
@@ -198,13 +154,13 @@
       </div>
 
       <div class="md:col-span-4 flex gap-1.5">
-        <button onclick="saveAndNextStudent()" class="flex-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 px-2 rounded-xl text-xs shadow-sm transition" title="Simpan nilai murid ini dan langsung pindah ke murid berikutnya">
+        <button onclick="saveAndNextStudent()" class="flex-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 px-2 rounded-xl text-xs shadow-sm transition">
           <i class="fa-solid fa-forward-step mr-1"></i> Simpan & Lanjut
         </button>
         <button onclick="printSingleReport()" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-3 rounded-xl text-xs shadow-sm transition">
           <i class="fa-solid fa-print mr-1"></i> Cetak 1
         </button>
-        <button onclick="printBulkReports()" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2.5 px-3 rounded-xl text-xs shadow-sm transition" title="Cetak semua murid di kelas ini">
+        <button onclick="printBulkReports()" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2.5 px-3 rounded-xl text-xs shadow-sm transition">
           <i class="fa-solid fa-copy mr-1"></i> Massal
         </button>
       </div>
@@ -222,7 +178,7 @@
           <i class="fa-solid fa-qrcode mr-1"></i> <span id="btn-sign-guru-text">Sahkan TTD Guru PAI</span>
         </button>
 
-        <button onclick="approveGuruAllClass()" class="px-3 py-1.5 rounded-lg font-bold transition bg-emerald-800 hover:bg-emerald-900 text-white shadow-sm" title="Sahkan TTD Guru PAI untuk seluruh murid di kelas ini sekaligus">
+        <button onclick="approveGuruAllClass()" class="px-3 py-1.5 rounded-lg font-bold transition bg-emerald-800 hover:bg-emerald-900 text-white shadow-sm">
           <i class="fa-solid fa-check-double mr-1"></i> Sahkan TTD 1 Kelas
         </button>
 
@@ -241,15 +197,9 @@
       <h3 class="font-bold text-slate-700 text-base">Belum Ada Data Murid di Kelas <span id="empty-rombel-label">-</span></h3>
       <p class="text-xs text-slate-500 mt-1 mb-4">Klik <strong>Sync Sheet</strong> untuk menarik data dari Spreadsheet, atau tambahkan murid baru di sini.</p>
       <div class="flex justify-center gap-2">
-        <button onclick="syncFromGoogleSheet(true)" class="px-4 py-2 bg-amber-400 hover:bg-amber-300 text-slate-900 rounded-xl text-xs font-bold">
-          <i class="fa-solid fa-rotate mr-1"></i> Muat dari Google Sheet
-        </button>
-        <button onclick="addNewStudentModal()" class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold">
-          <i class="fa-solid fa-user-plus mr-1"></i> Tambah 1 Murid
-        </button>
-        <button onclick="openBulkImportModal()" class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold">
-          <i class="fa-solid fa-file-import mr-1"></i> Import Massal
-        </button>
+        <button onclick="syncFromGoogleSheet(true)" class="px-4 py-2 bg-amber-400 hover:bg-amber-300 text-slate-900 rounded-xl text-xs font-bold"><i class="fa-solid fa-rotate mr-1"></i> Muat dari Google Sheet</button>
+        <button onclick="addNewStudentModal()" class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold"><i class="fa-solid fa-user-plus mr-1"></i> Tambah 1 Murid</button>
+        <button onclick="openBulkImportModal()" class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold"><i class="fa-solid fa-file-import mr-1"></i> Import Massal</button>
       </div>
     </div>
 
@@ -313,10 +263,18 @@
           <div id="form-ibadah-list" class="p-4 divide-y divide-slate-100"></div>
         </div>
 
-        <!-- Card 3: Akhlak -->
+        <!-- Card 3: Akhlak (DENGAN TOMBOL TARIK ABSENSI) -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-          <div class="bg-slate-800 text-white px-4 py-3">
+          <div class="bg-slate-800 text-white px-4 py-3 flex flex-wrap items-center justify-between gap-2">
             <h3 class="font-bold text-sm"><i class="fa-solid fa-heart-circle-check text-amber-300 mr-1.5"></i>3. Aspek Akhlak & Nilai-Nilai Religius</h3>
+            <div class="flex gap-1">
+              <button onclick="applyAttendanceToCurrentStudent()" class="px-2.5 py-1 rounded bg-amber-400 hover:bg-amber-300 text-slate-900 text-[11px] font-bold transition" title="Isi otomatis Sholat Dzuhur, Ashar & Jumat dari Log Absensi">
+                <i class="fa-solid fa-download mr-1"></i>Tarik Absensi
+              </button>
+              <button onclick="applyAttendanceToWholeClass()" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold transition" title="Tarik nilai absensi untuk seluruh murid di kelas ini">
+                Tarik 1 Kelas
+              </button>
+            </div>
           </div>
           <div id="form-akhlak-list" class="p-4 divide-y divide-slate-100"></div>
         </div>
@@ -514,6 +472,7 @@ const GRADE_POINT = { 'A': 4, 'B': 3, 'C': 2, 'D': 1 };
 let currentUser = null;
 let studentsDB = JSON.parse(localStorage.getItem('erapor_prod_students')) || [];
 let reportsDB = JSON.parse(localStorage.getItem('erapor_prod_reports')) || {};
+let attendanceSummaryDB = { totalSessions: {}, studentCounts: {} };
 
 function getTeacherForRombel(rombel) {
   return USERS_DB.find(u => u.role === 'GURU_PAI' && u.classes.includes(rombel)) || USERS_DB[0];
@@ -565,6 +524,8 @@ async function syncFromGoogleSheet(showAlert = false) {
     if (data.status === 'ok') {
       studentsDB = data.students || [];
       reportsDB = Object.assign({}, reportsDB, data.reports || {});
+      if (data.attendanceSummary) attendanceSummaryDB = data.attendanceSummary;
+
       localStorage.setItem('erapor_prod_students', JSON.stringify(studentsDB));
       localStorage.setItem('erapor_prod_reports', JSON.stringify(reportsDB));
 
@@ -577,7 +538,7 @@ async function syncFromGoogleSheet(showAlert = false) {
       onRombelChange();
       if (currentUser && currentUser.role !== 'GURU_PAI') renderKepsekDashboard();
       badge.innerHTML = `<i class="fa-solid fa-cloud-check mr-1"></i>Tersinkron (${studentsDB.length} murid)`;
-      if (showAlert) alert(`Berhasil memuat ${studentsDB.length} murid & pengaturan terbaru dari Google Spreadsheet!`);
+      if (showAlert) alert(`Berhasil memuat ${studentsDB.length} murid & rekap absensi terbaru dari Google Spreadsheet!`);
     } else {
       throw new Error(data.message || 'Gagal membaca Sheet');
     }
@@ -722,7 +683,6 @@ function onRombelChange() {
   document.getElementById('info-rombel-name').textContent = rombel;
   document.getElementById('info-rombel-teacher').textContent = `${teacher.name} (NIP. ${teacher.nip})`;
   document.getElementById('empty-rombel-label').textContent = rombel;
-
   if (populateStudentDropdown()) renderAssessmentForm();
 }
 
@@ -783,7 +743,60 @@ function bulkSetQuran(g) { CURRICULUM[getCurrKey()].quran.forEach(s => ensureRep
 function bulkSetIbadah(g) { CURRICULUM[getCurrKey()].ibadah.forEach(i => ensureReportData().ibadah[i] = g); saveCurrentReport(false); renderAssessmentForm(); }
 function updateCatatan(v) { ensureReportData().catatan = v; saveCurrentReport(false); renderRaporPreview(); }
 
-// ==================== SMART GENERATOR CATATAN GURU PAI BERBASIS NILAI ====================
+// ==================== TARIK NILAI OTOMATIS DARI LOG ABSENSI SHOLAT ====================
+function pctToGrade(pct) {
+  if (pct >= 85) return 'A';
+  if (pct >= 70) return 'B';
+  if (pct >= 55) return 'C';
+  return 'D';
+}
+
+function applyAttendanceForStudent(nis, rombel, sem) {
+  const rep = getOrInitReport(nis, rombel, sem);
+  const totals = attendanceSummaryDB.totalSessions || {};
+  const counts = (attendanceSummaryDB.studentCounts || {})[String(nis)] || {};
+  const keys = ['Sholat Dzuhur Berjamaah', 'Sholat Ashar Berjamaah', 'Sholat Jumat / Keputrian'];
+  let updated = 0;
+
+  keys.forEach(k => {
+    const totalHeld = totals[k] || 0;
+    if (totalHeld > 0) {
+      const attended = counts[k] || 0;
+      const pct = Math.min(100, Math.round((attended / totalHeld) * 100));
+      rep.akhlak[k] = pctToGrade(pct);
+      updated++;
+    }
+  });
+  return updated;
+}
+
+function applyAttendanceToCurrentStudent() {
+  const nis = document.getElementById('select-student').value;
+  const rombel = document.getElementById('select-rombel').value;
+  const sem = document.getElementById('select-semester').value;
+  if (!nis) return;
+  const count = applyAttendanceForStudent(nis, rombel, sem);
+  if (count === 0) return alert('Belum ada data log absensi sholat di Google Spreadsheet. Pastikan sudah klik Sync Sheet.');
+  saveCurrentReport(false);
+  renderAssessmentForm();
+  alert('Predikat Sholat Dzuhur, Ashar, dan Jumat/Keputrian berhasil ditarik otomatis dari data absensi!');
+}
+
+function applyAttendanceToWholeClass() {
+  const rombel = document.getElementById('select-rombel').value;
+  const sem = document.getElementById('select-semester').value;
+  const list = studentsDB.filter(s => String(s.rombel).toUpperCase() === rombel.toUpperCase());
+  if (list.length === 0) return;
+  if (!confirm(`Tarik nilai otomatis dari Log Absensi Sholat untuk seluruh ${list.length} murid di Kelas ${rombel}?`)) return;
+  let totalUpdated = 0;
+  list.forEach(s => { if (applyAttendanceForStudent(s.nis, rombel, sem) > 0) totalUpdated++; });
+  if (totalUpdated === 0) return alert('Belum ada data log absensi sholat di Google Spreadsheet. Klik Sync Sheet terlebih dahulu.');
+  localStorage.setItem('erapor_prod_reports', JSON.stringify(reportsDB));
+  renderAssessmentForm();
+  alert(`Berhasil menarik nilai absensi sholat untuk ${totalUpdated} murid di Kelas ${rombel}. Jangan lupa klik Simpan / Sahkan TTD 1 Kelas untuk menyinkronkan ke Sheet.`);
+}
+
+// ==================== SMART GENERATOR CATATAN GURU PAI ====================
 function generateAutoNote() {
   const stu = studentsDB.find(s => String(s.nis) === String(document.getElementById('select-student').value));
   const nama = stu ? stu.name : 'Ananda';
@@ -822,7 +835,6 @@ function generateAutoNote() {
 function toggleGuruSignature() { ensureReportData().approvedGuru = !ensureReportData().approvedGuru; saveCurrentReport(true); renderAssessmentForm(); }
 function toggleKepsekSignatureInline() { ensureReportData().approvedKepsek = !ensureReportData().approvedKepsek; saveCurrentReport(true); renderAssessmentForm(); }
 
-// ==================== SIMPAN & LANJUT + SAHKAN TTD GURU 1 KELAS (BATCH) ====================
 async function saveAndNextStudent() {
   await saveCurrentReport(true);
   const stuSel = document.getElementById('select-student');
@@ -850,10 +862,7 @@ async function approveGuruAllClass() {
     const rep = getOrInitReport(s.nis, rombel, sem);
     rep.approvedGuru = true;
     rep.saved = true;
-    return {
-      nis: s.nis, nama: s.name, rombel, semester: sem,
-      guruNama: teacher.name, guruNip: teacher.nip, ...rep
-    };
+    return { nis: s.nis, nama: s.name, rombel, semester: sem, guruNama: teacher.name, guruNip: teacher.nip, ...rep };
   });
 
   localStorage.setItem('erapor_prod_reports', JSON.stringify(reportsDB));
@@ -885,7 +894,6 @@ function evaluateSurahGroup(surahs, quranScores) {
   return { pred, desc };
 }
 
-// ==================== KOMPONEN KOP (HALAMAN 1), IDENTITAS TIPIS (HALAMAN 2) & WATERMARK ====================
 function buildWatermarkHtml(stu, schoolName) {
   return `
     <div class="rapor-watermark">
@@ -897,7 +905,6 @@ function buildWatermarkHtml(stu, schoolName) {
 
 function buildPage1HeaderHtml(stu, rombel, sem, schoolName, tahunAjaran) {
   return `
-    <!-- Gambar Kop Resmi Sekolah (kop.png) -->
     <div class="mb-1.5">
       <img src="kop.png" alt="Kop Sekolah" class="w-full h-auto max-h-[115px] object-contain mx-auto"
         onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
@@ -906,13 +913,10 @@ function buildPage1HeaderHtml(stu, rombel, sem, schoolName, tahunAjaran) {
         <div class="text-[8.5pt] text-slate-700">Jl. Raya Kebonsari 02 Yosowilangun - Lumajang - Jawa Timur 67382</div>
       </div>
     </div>
-    <!-- Garis Pembatas Bawah Kop -->
     <div class="border-b-2 border-slate-900 mb-2"></div>
-    <!-- Judul Rapor Rata Tengah -->
     <div class="text-center text-xs font-extrabold uppercase tracking-wider text-slate-900 mb-2.5">
       LAPORAN CAPAIAN KOMPETENSI KEAGAMAAN MURID
     </div>
-    <!-- Identitas Murid -->
     <div class="grid grid-cols-2 gap-2 text-xs mb-2.5">
       <div>
         <div><span class="inline-block w-28 font-semibold">Nama Murid</span>: <strong>${stu.name}</strong></div>
@@ -947,30 +951,22 @@ function buildSectionDAndSignaturesHtml(rep, teacher, tanggalRapor, includeLegen
 
   return `
     <div class="font-bold text-xs uppercase mb-1">D. Catatan Guru Pendidikan Agama Islam</div>
-    <div class="border border-slate-800 p-2.5 text-xs italic mb-3 leading-relaxed min-h-[54px]">
-      "${rep.catatan || '-'}"
-    </div>
+    <div class="border border-slate-800 p-2.5 text-xs italic mb-3 leading-relaxed min-h-[54px]">"${rep.catatan || '-'}"</div>
     ${legendHtml}
     <div class="grid grid-cols-3 text-xs mt-3 pt-1">
       <div class="text-center">
-        <div>Mengetahui,</div>
-        <div>Orang Tua / Wali Murid</div>
-        <div class="h-16"></div>
+        <div>Mengetahui,</div><div>Orang Tua / Wali Murid</div><div class="h-16"></div>
         <div class="font-bold underline">( ........................................ )</div>
       </div>
       <div class="text-center">
-        <div>Mengesahkan,</div>
-        <div>Kepala Sekolah</div>
+        <div>Mengesahkan,</div><div>Kepala Sekolah</div>
         ${renderQrSignatureSlot(KEPSEK_DATA.signUrl, rep.approvedKepsek)}
-        <div class="font-bold underline">${KEPSEK_DATA.name}</div>
-        <div>NIP. ${KEPSEK_DATA.nip}</div>
+        <div class="font-bold underline">${KEPSEK_DATA.name}</div><div>NIP. ${KEPSEK_DATA.nip}</div>
       </div>
       <div class="text-center">
-        <div>${tanggalRapor}</div>
-        <div>Guru Pendidikan Agama Islam</div>
+        <div>${tanggalRapor}</div><div>Guru Pendidikan Agama Islam</div>
         ${renderQrSignatureSlot(teacher.signUrl, rep.approvedGuru)}
-        <div class="font-bold underline">${teacher.name}</div>
-        <div>NIP. ${teacher.nip}</div>
+        <div class="font-bold underline">${teacher.name}</div><div>NIP. ${teacher.nip}</div>
       </div>
     </div>`;
 }
@@ -1001,28 +997,17 @@ function buildRaporPagesArray(stu, rombel, sem) {
     <div class="font-bold text-xs uppercase mb-1">A. Aspek Penilaian Al-Qur'an</div>
     <table class="print-table w-full text-xs border border-slate-800 mb-2">
       <thead><tr class="bg-slate-100"><th class="w-9 text-center">No</th><th>1. Kemampuan Membaca Al-Qur'an</th><th class="w-20 text-center">Tingkatan</th><th class="w-16 text-center">Predikat</th><th>Keterangan Capaian</th></tr></thead>
-      <tbody>
-        <tr>
-          <td class="text-center">1</td>
-          <td class="font-semibold">Bacaan Al-Qur'an</td>
-          <td class="text-center font-bold">${bLevel}</td>
-          <td class="text-center font-bold">${bGrade}</td>
-          <td>${getBacaanDesc(bLevel, bGrade)}</td>
-        </tr>
-      </tbody>
+      <tbody><tr><td class="text-center">1</td><td class="font-semibold">Bacaan Al-Qur'an</td><td class="text-center font-bold">${bLevel}</td><td class="text-center font-bold">${bGrade}</td><td>${getBacaanDesc(bLevel, bGrade)}</td></tr></tbody>
     </table>
-
     <table class="print-table w-full text-xs border border-slate-800 mb-2.5">
       <thead><tr class="bg-slate-100"><th class="w-9 text-center">No</th><th>2. Menghafal Surat Pendek</th><th class="w-16 text-center">Predikat</th><th>Keterangan Capaian</th></tr></thead>
       <tbody>${quranRows}</tbody>
     </table>
-
     <div class="font-bold text-xs uppercase mb-1">B. Aspek Penilaian Ibadah Praktis dan Pembiasaan</div>
     <table class="print-table w-full text-xs border border-slate-800 mb-2.5">
       <thead><tr class="bg-slate-100"><th class="w-9 text-center">No</th><th>Materi Ibadah Praktis & Doa Harian</th><th class="w-16 text-center">Predikat</th><th>Keterangan Capaian</th></tr></thead>
       <tbody>${curr.ibadah.map((item, i) => { const g = rep.ibadah[item] || 'A'; return `<tr><td class="text-center">${i + 1}</td><td>${item}</td><td class="text-center font-bold">${g}</td><td>${PREDICATE_DESC[g]}</td></tr>`; }).join('')}</tbody>
     </table>
-
     <div class="font-bold text-xs uppercase mb-1">C. Aspek Penilaian Akhlak dan Nilai-Nilai Religius</div>
     <table class="print-table w-full text-xs border border-slate-800 mb-2.5">
       <thead><tr class="bg-slate-100"><th class="w-9 text-center">No</th><th>Aspek Pembiasaan & Sikap Religius</th><th class="w-16 text-center">Predikat</th><th>Keterangan Capaian</th></tr></thead>
@@ -1032,29 +1017,12 @@ function buildRaporPagesArray(stu, rombel, sem) {
   const wm = buildWatermarkHtml(stu, schoolName);
 
   if (curr.twoPages) {
-    const page1 = `
-      ${wm}
-      <div class="rapor-content">
-        ${buildPage1HeaderHtml(stu, rombel, sem, schoolName, tahunAjaran)}
-        ${tablesABC}
-      </div>`;
-    const page2 = `
-      ${wm}
-      <div class="rapor-content">
-        ${buildPage2ThinIdentityHtml(stu, rombel, sem)}
-        ${buildSectionDAndSignaturesHtml(rep, teacher, tanggalRapor, true)}
-      </div>`;
-    return [page1, page2];
+    return [
+      `${wm}<div class="rapor-content">${buildPage1HeaderHtml(stu, rombel, sem, schoolName, tahunAjaran)}${tablesABC}</div>`,
+      `${wm}<div class="rapor-content">${buildPage2ThinIdentityHtml(stu, rombel, sem)}${buildSectionDAndSignaturesHtml(rep, teacher, tanggalRapor, true)}</div>`
+    ];
   }
-
-  const singlePage = `
-    ${wm}
-    <div class="rapor-content">
-      ${buildPage1HeaderHtml(stu, rombel, sem, schoolName, tahunAjaran)}
-      ${tablesABC}
-      ${buildSectionDAndSignaturesHtml(rep, teacher, tanggalRapor, false)}
-    </div>`;
-  return [singlePage];
+  return [`${wm}<div class="rapor-content">${buildPage1HeaderHtml(stu, rombel, sem, schoolName, tahunAjaran)}${tablesABC}${buildSectionDAndSignaturesHtml(rep, teacher, tanggalRapor, false)}</div>`];
 }
 
 function renderRaporPreview() {
@@ -1069,36 +1037,19 @@ function renderRaporPreview() {
   statusEl.textContent = (rep.approvedGuru && rep.approvedKepsek) ? 'TTD Lengkap' : (rep.approvedGuru ? 'Menunggu Kepsek' : 'Belum Disahkan');
 
   const pages = buildRaporPagesArray(stu, rombel, sem);
-  document.getElementById('rapor-preview-container').innerHTML = pages.map(p =>
-    `<div class="rapor-sheet bg-white shadow-lg mx-auto p-6 text-slate-900 rounded" style="min-height: 760px;">${p}</div>`
-  ).join('');
-
-  document.getElementById('print-area').innerHTML = pages.map(p =>
-    `<div class="rapor-page rapor-sheet">${p}</div>`
-  ).join('');
+  document.getElementById('rapor-preview-container').innerHTML = pages.map(p => `<div class="rapor-sheet bg-white shadow-lg mx-auto p-6 text-slate-900 rounded" style="min-height: 760px;">${p}</div>`).join('');
+  document.getElementById('print-area').innerHTML = pages.map(p => `<div class="rapor-page rapor-sheet">${p}</div>`).join('');
 }
 
-function renderRaporPreviewSafe() {
-  if (document.getElementById('select-student').value) renderRaporPreview();
-}
-
-function printSingleReport() {
-  if (!document.getElementById('select-student').value) return alert('Pilih murid terlebih dahulu.');
-  renderRaporPreview();
-  window.print();
-}
+function renderRaporPreviewSafe() { if (document.getElementById('select-student').value) renderRaporPreview(); }
+function printSingleReport() { if (!document.getElementById('select-student').value) return alert('Pilih murid terlebih dahulu.'); renderRaporPreview(); window.print(); }
 
 function printBulkReports() {
   const rombel = document.getElementById('select-rombel').value;
   const sem = document.getElementById('select-semester').value;
   const list = studentsDB.filter(s => String(s.rombel).toUpperCase() === rombel.toUpperCase());
   if (list.length === 0) return alert(`Belum ada data murid di Kelas ${rombel}.`);
-
-  const allPagesHtml = list.flatMap(stu =>
-    buildRaporPagesArray(stu, rombel, sem).map(p => `<div class="rapor-page rapor-sheet">${p}</div>`)
-  ).join('');
-
-  document.getElementById('print-area').innerHTML = allPagesHtml;
+  document.getElementById('print-area').innerHTML = list.flatMap(stu => buildRaporPagesArray(stu, rombel, sem).map(p => `<div class="rapor-page rapor-sheet">${p}</div>`)).join('');
   window.print();
 }
 
@@ -1120,15 +1071,12 @@ async function saveCurrentReport(syncCloud = false) {
   badge.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i>Menyimpan ke Sheet...';
   try {
     const res = await postToGoogleSheet({
-      action: 'SAVE_REPORT',
-      nis: stu.nis, nama: stu.name, rombel, semester: sem,
+      action: 'SAVE_REPORT', nis: stu.nis, nama: stu.name, rombel, semester: sem,
       guruNama: teacher.name, guruNip: teacher.nip,
       quran: rep.quran, ibadah: rep.ibadah, akhlak: rep.akhlak,
       catatan: rep.catatan, approvedGuru: rep.approvedGuru, approvedKepsek: rep.approvedKepsek
     });
-    badge.innerHTML = res.status === 'ok'
-      ? '<i class="fa-solid fa-cloud-check mr-1"></i>Tersimpan di Google Sheet'
-      : '<i class="fa-solid fa-triangle-exclamation mr-1"></i>Error: ' + res.message;
+    badge.innerHTML = res.status === 'ok' ? '<i class="fa-solid fa-cloud-check mr-1"></i>Tersimpan di Google Sheet' : '<i class="fa-solid fa-triangle-exclamation mr-1"></i>Error: ' + res.message;
   } catch (e) {
     badge.innerHTML = '<i class="fa-solid fa-floppy-disk mr-1"></i>Tersimpan Lokal (Offline)';
   }
@@ -1142,12 +1090,9 @@ async function saveSchoolConfigToCloud() {
     const res = await postToGoogleSheet({ action: 'SAVE_CONFIG', schoolName, tahunAjaran, tanggalRapor });
     if (res.status === 'ok') alert('Pengaturan sekolah & tanggal rapor berhasil disimpan ke Google Sheet!');
     else alert('Gagal menyimpan pengaturan: ' + res.message);
-  } catch (e) {
-    alert('Gagal terhubung ke Google Sheet.');
-  }
+  } catch (e) { alert('Gagal terhubung ke Google Sheet.'); }
 }
 
-// ==================== PANEL KEPSEK (MODE BATCH CEPAT) ====================
 function renderKepsekDashboard() {
   const teachers = USERS_DB.filter(u => u.role === 'GURU_PAI');
   document.getElementById('kepsek-teacher-cards').innerHTML = teachers.map(t => `<div class="p-4 rounded-xl border border-slate-200 bg-slate-50"><div class="text-xs font-bold text-emerald-800">${t.name}</div><div class="text-[11px] text-slate-500">NIP. ${t.nip} • Kelas: ${t.classes.join(', ')}</div></div>`).join('');
@@ -1156,10 +1101,7 @@ function renderKepsekDashboard() {
   const sem = document.getElementById('select-semester').value;
   const list = filterRombel === 'ALL' ? studentsDB : studentsDB.filter(s => s.rombel === filterRombel);
   const tbody = document.getElementById('kepsek-table-body');
-  if (list.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-slate-400">Belum ada data murid. Klik Sync Sheet di atas.</td></tr>`;
-    return;
-  }
+  if (list.length === 0) { tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-slate-400">Belum ada data murid. Klik Sync Sheet di atas.</td></tr>`; return; }
   tbody.innerHTML = list.map((s, idx) => {
     const t = getTeacherForRombel(s.rombel);
     const rep = reportsDB[`${s.nis}_${s.rombel}_${sem}`] || {};
@@ -1173,15 +1115,9 @@ async function toggleApproveStudent(nis, rombel, sem) {
   rep.saved = true;
   localStorage.setItem('erapor_prod_reports', JSON.stringify(reportsDB));
   renderKepsekDashboard();
-
   const stu = studentsDB.find(s => String(s.nis) === String(nis));
   const teacher = getTeacherForRombel(rombel);
-  if (stu) {
-    await postToGoogleSheet({
-      action: 'SAVE_REPORT', nis: stu.nis, nama: stu.name, rombel, semester: sem,
-      guruNama: teacher.name, guruNip: teacher.nip, ...rep
-    });
-  }
+  if (stu) await postToGoogleSheet({ action: 'SAVE_REPORT', nis: stu.nis, nama: stu.name, rombel, semester: sem, guruNama: teacher.name, guruNip: teacher.nip, ...rep });
 }
 
 async function approveAllReports() {
@@ -1200,10 +1136,7 @@ async function approveAllReports() {
     rep.approvedKepsek = true;
     rep.saved = true;
     const teacher = getTeacherForRombel(s.rombel);
-    return {
-      nis: s.nis, nama: s.name, rombel: s.rombel, semester: sem,
-      guruNama: teacher.name, guruNip: teacher.nip, ...rep
-    };
+    return { nis: s.nis, nama: s.name, rombel: s.rombel, semester: sem, guruNama: teacher.name, guruNip: teacher.nip, ...rep };
   });
 
   localStorage.setItem('erapor_prod_reports', JSON.stringify(reportsDB));
@@ -1213,15 +1146,10 @@ async function approveAllReports() {
     const res = await postToGoogleSheet({ action: 'SAVE_REPORTS_BATCH', reports: batchPayload });
     if (res.status === 'ok') alert(`Berhasil mengesahkan ${list.length} rapor ke Google Spreadsheet dalam 1 kali kirim!`);
     else alert('Terjadi kendala saat menyimpan: ' + res.message);
-  } catch (e) {
-    alert('Tersimpan lokal, namun gagal terhubung ke Google Sheet.');
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = '<i class="fa-solid fa-qrcode mr-1.5"></i>Sahkan Semua (Batch)';
-  }
+  } catch (e) { alert('Tersimpan lokal, namun gagal terhubung ke Google Sheet.'); }
+  finally { btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-qrcode mr-1.5"></i>Sahkan Semua (Batch)'; }
 }
 
-// ==================== TAMBAH & IMPORT MURID KE SPREADSHEET ====================
 async function addNewStudentModal() {
   const rombel = document.getElementById('select-rombel').value;
   const nama = prompt(`Masukkan Nama Murid untuk Kelas ${rombel}:`);
