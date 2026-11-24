@@ -745,16 +745,17 @@ function updateCatatan(v) { ensureReportData().catatan = v; saveCurrentReport(fa
 
 // ==================== TARIK NILAI OTOMATIS DARI LOG ABSENSI SHOLAT ====================
 function pctToGrade(pct) {
-  if (pct >= 85) return 'A';
-  if (pct >= 70) return 'B';
-  if (pct >= 55) return 'C';
+  if (pct >= 90) return 'A';
+  if (pct >= 75) return 'B';
+  if (pct >= 60) return 'C';
   return 'D';
 }
 
 function applyAttendanceForStudent(nis, rombel, sem) {
   const rep = getOrInitReport(nis, rombel, sem);
-  const totals = attendanceSummaryDB.totalSessions || {};
-  const counts = (attendanceSummaryDB.studentCounts || {})[String(nis)] || {};
+  const semData = (attendanceSummaryDB && attendanceSummaryDB[sem]) ? attendanceSummaryDB[sem] : { totalSessions: {}, studentCounts: {} };
+  const totals = semData.totalSessions || {};
+  const counts = (semData.studentCounts || {})[String(nis)] || {};
   const keys = ['Sholat Dzuhur Berjamaah', 'Sholat Ashar Berjamaah', 'Sholat Jumat / Keputrian'];
   let updated = 0;
 
