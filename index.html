@@ -213,9 +213,13 @@
               <h3 class="font-bold text-sm"><i class="fa-solid fa-book-quran text-amber-300 mr-1.5"></i>1. Aspek Penilaian Al-Qur'an</h3>
               <p id="quran-subtitle" class="text-[11px] text-emerald-200">-</p>
             </div>
-            <div class="flex gap-1">
-              <button onclick="bulkSetQuran('A')" class="px-2 py-1 rounded bg-emerald-700 hover:bg-emerald-600 text-[11px] font-bold">Set Surat A</button>
-              <button onclick="bulkSetQuran('B')" class="px-2 py-1 rounded bg-emerald-700 hover:bg-emerald-600 text-[11px] font-bold">Set Surat B</button>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-emerald-200 font-semibold mr-0.5">Set Surat:</span>
+              <button type="button" onclick="bulkSetQuran('A')" class="w-6 h-6 rounded bg-emerald-700 hover:bg-emerald-600 text-[11px] font-bold">A</button>
+              <button type="button" onclick="bulkSetQuran('B')" class="w-6 h-6 rounded bg-emerald-700 hover:bg-emerald-600 text-[11px] font-bold">B</button>
+              <button type="button" onclick="bulkSetQuran('C')" class="w-6 h-6 rounded bg-emerald-700 hover:bg-emerald-600 text-[11px] font-bold">C</button>
+              <button type="button" onclick="bulkSetQuran('D')" class="w-6 h-6 rounded bg-emerald-700 hover:bg-emerald-600 text-[11px] font-bold">D</button>
+              <button type="button" onclick="bulkSetQuran('')" title="Kosongkan semua nilai surat" class="w-6 h-6 rounded bg-rose-700 hover:bg-rose-600 text-[11px] font-bold"><i class="fa-solid fa-xmark"></i></button>
             </div>
           </div>
 
@@ -255,19 +259,31 @@
               <h3 class="font-bold text-sm"><i class="fa-solid fa-hands-praying text-amber-300 mr-1.5"></i>2. Aspek Ibadah Praktis & Pembiasaan</h3>
               <p id="ibadah-subtitle" class="text-[11px] text-teal-200">-</p>
             </div>
-            <div class="flex gap-1">
-              <button onclick="bulkSetIbadah('A')" class="px-2 py-1 rounded bg-teal-700 hover:bg-teal-600 text-[11px] font-bold">Set Semua A</button>
-              <button onclick="bulkSetIbadah('B')" class="px-2 py-1 rounded bg-teal-700 hover:bg-teal-600 text-[11px] font-bold">Set Semua B</button>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-teal-200 font-semibold mr-0.5">Set:</span>
+              <button type="button" onclick="bulkSetIbadah('A')" class="w-6 h-6 rounded bg-teal-700 hover:bg-teal-600 text-[11px] font-bold">A</button>
+              <button type="button" onclick="bulkSetIbadah('B')" class="w-6 h-6 rounded bg-teal-700 hover:bg-teal-600 text-[11px] font-bold">B</button>
+              <button type="button" onclick="bulkSetIbadah('C')" class="w-6 h-6 rounded bg-teal-700 hover:bg-teal-600 text-[11px] font-bold">C</button>
+              <button type="button" onclick="bulkSetIbadah('D')" class="w-6 h-6 rounded bg-teal-700 hover:bg-teal-600 text-[11px] font-bold">D</button>
+              <button type="button" onclick="bulkSetIbadah('')" title="Kosongkan semua nilai ibadah" class="w-6 h-6 rounded bg-rose-700 hover:bg-rose-600 text-[11px] font-bold"><i class="fa-solid fa-xmark"></i></button>
             </div>
           </div>
           <div id="form-ibadah-list" class="p-4 divide-y divide-slate-100"></div>
         </div>
 
-        <!-- Card 3: Akhlak (DENGAN TOMBOL TARIK ABSENSI) -->
+        <!-- Card 3: Akhlak (DENGAN TOMBOL TARIK ABSENSI & SET A-D) -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div class="bg-slate-800 text-white px-4 py-3 flex flex-wrap items-center justify-between gap-2">
             <h3 class="font-bold text-sm"><i class="fa-solid fa-heart-circle-check text-amber-300 mr-1.5"></i>3. Aspek Akhlak & Nilai-Nilai Religius</h3>
-            <div class="flex gap-1">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <div class="flex items-center gap-1">
+                <span class="text-[10px] text-slate-300 font-semibold mr-0.5">Set:</span>
+                <button type="button" onclick="bulkSetAkhlak('A')" class="w-6 h-6 rounded bg-slate-600 hover:bg-slate-500 text-[11px] font-bold">A</button>
+                <button type="button" onclick="bulkSetAkhlak('B')" class="w-6 h-6 rounded bg-slate-600 hover:bg-slate-500 text-[11px] font-bold">B</button>
+                <button type="button" onclick="bulkSetAkhlak('C')" class="w-6 h-6 rounded bg-slate-600 hover:bg-slate-500 text-[11px] font-bold">C</button>
+                <button type="button" onclick="bulkSetAkhlak('D')" class="w-6 h-6 rounded bg-slate-600 hover:bg-slate-500 text-[11px] font-bold">D</button>
+                <button type="button" onclick="bulkSetAkhlak('')" title="Kosongkan semua nilai akhlak" class="w-6 h-6 rounded bg-rose-700 hover:bg-rose-600 text-[11px] font-bold"><i class="fa-solid fa-xmark"></i></button>
+              </div>
               <button onclick="applyAttendanceToCurrentStudent()" class="px-2.5 py-1 rounded bg-amber-400 hover:bg-amber-300 text-slate-900 text-[11px] font-bold transition" title="Isi otomatis Sholat Dzuhur, Ashar & Jumat dari Log Absensi">
                 <i class="fa-solid fa-download mr-1"></i>Tarik Absensi
               </button>
@@ -484,6 +500,7 @@ function getGradeFromRombel(rombel) {
 }
 
 function getBacaanDesc(level, grade) {
+  if (!grade) return 'Belum dinilai';
   if (level === "Al-Qur'an") {
     if (grade === 'A') return "Mampu membaca Al-Qur'an dengan sangat lancar dan sesuai kaidah tajwid";
     if (grade === 'B') return "Mampu membaca Al-Qur'an dengan lancar, perlu penyempurnaan tajwid";
@@ -619,7 +636,7 @@ function switchTab(tab) {
   if (tab === 'kepsek') renderKepsekDashboard();
 }
 
-// ==================== PENILAIAN ====================
+// ==================== PENILAIAN (DEFAULT KOSONG) ====================
 function getCurrKeyFor(rombel, sem) { return `${getGradeFromRombel(rombel)}_${sem}`; }
 function getCurrKey() { return getCurrKeyFor(document.getElementById('select-rombel').value, document.getElementById('select-semester').value); }
 
@@ -627,15 +644,17 @@ function getOrInitReport(nis, rombel, sem) {
   const key = `${nis}_${rombel}_${sem}`;
   const curr = CURRICULUM[getCurrKeyFor(rombel, sem)];
   if (!reportsDB[key]) {
-    const q = { __bacaan_level: "Al-Qur'an", __bacaan_grade: 'A' }, ib = {}, ak = {};
-    curr.quran.forEach(s => q[s] = 'A');
-    curr.ibadah.forEach(i => ib[i] = 'A');
-    AKHLAK_ITEMS.forEach(a => ak[a] = 'A');
+    const q = { __bacaan_level: "Al-Qur'an", __bacaan_grade: '' }, ib = {}, ak = {};
+    curr.quran.forEach(s => q[s] = '');
+    curr.ibadah.forEach(i => ib[i] = '');
+    AKHLAK_ITEMS.forEach(a => ak[a] = '');
     reportsDB[key] = { quran: q, ibadah: ib, akhlak: ak, catatan: '', approvedGuru: false, approvedKepsek: false, saved: false };
   } else {
     if (!reportsDB[key].quran) reportsDB[key].quran = {};
+    if (!reportsDB[key].ibadah) reportsDB[key].ibadah = {};
+    if (!reportsDB[key].akhlak) reportsDB[key].akhlak = {};
     if (!reportsDB[key].quran.__bacaan_level) reportsDB[key].quran.__bacaan_level = "Al-Qur'an";
-    if (!reportsDB[key].quran.__bacaan_grade) reportsDB[key].quran.__bacaan_grade = 'A';
+    if (reportsDB[key].quran.__bacaan_grade === undefined) reportsDB[key].quran.__bacaan_grade = '';
   }
   return reportsDB[key];
 }
@@ -702,7 +721,7 @@ function renderAssessmentForm() {
   document.getElementById('ibadah-subtitle').textContent = `Target Kelas ${rombel} • Semester ${sem} (${curr.ibadah.length} Materi)`;
 
   document.getElementById('select-bacaan-level').value = rep.quran.__bacaan_level || "Al-Qur'an";
-  const bGrade = rep.quran.__bacaan_grade || 'A';
+  const bGrade = rep.quran.__bacaan_grade || '';
   document.getElementById('bacaan-grade-buttons').innerHTML = ['A','B','C','D'].map(g =>
     `<button type="button" onclick="setBacaanGrade('${g}')" class="w-8 h-8 rounded-lg font-bold text-xs transition ${bGrade === g ? 'bg-emerald-700 text-white shadow-sm' : 'bg-white border border-emerald-200 text-slate-600 hover:bg-emerald-100'}">${g}</button>`
   ).join('');
@@ -718,18 +737,18 @@ function renderAssessmentForm() {
   txtKepsek.textContent = rep.approvedKepsek ? 'TTD Kepsek: Disahkan' : 'Sahkan TTD Kepsek';
 
   document.getElementById('form-quran-list').innerHTML = curr.quran.map((surah, idx) => {
-    const val = rep.quran[surah] || 'A';
-    return `<div class="py-2 flex items-center justify-between gap-2 text-xs"><span class="font-semibold text-slate-700">${idx + 1}. QS. ${surah}</span><div class="flex gap-1">${['A','B','C','D'].map(g => `<button type="button" onclick="setScore('quran','${surah.replace(/'/g,"\\'")}','${g}')" class="w-7 h-7 rounded-lg font-bold ${val === g ? 'bg-emerald-700 text-white' : 'bg-slate-100 text-slate-600'}">${g}</button>`).join('')}</div></div>`;
+    const val = rep.quran[surah] || '';
+    return `<div class="py-2 flex items-center justify-between gap-2 text-xs"><span class="font-semibold text-slate-700">${idx + 1}. QS. ${surah}</span><div class="flex gap-1">${['A','B','C','D'].map(g => `<button type="button" onclick="setScore('quran','${surah.replace(/'/g,"\\'")}','${g}')" class="w-7 h-7 rounded-lg font-bold ${val === g ? 'bg-emerald-700 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${g}</button>`).join('')}</div></div>`;
   }).join('');
 
   document.getElementById('form-ibadah-list').innerHTML = curr.ibadah.map((item, idx) => {
-    const val = rep.ibadah[item] || 'A';
-    return `<div class="py-2 flex items-center justify-between gap-2 text-xs"><span class="font-semibold text-slate-700">${idx + 1}. ${item}</span><div class="flex gap-1">${['A','B','C','D'].map(g => `<button type="button" onclick="setScore('ibadah','${item.replace(/'/g,"\\'")}','${g}')" class="w-7 h-7 rounded-lg font-bold ${val === g ? 'bg-teal-700 text-white' : 'bg-slate-100 text-slate-600'}">${g}</button>`).join('')}</div></div>`;
+    const val = rep.ibadah[item] || '';
+    return `<div class="py-2 flex items-center justify-between gap-2 text-xs"><span class="font-semibold text-slate-700">${idx + 1}. ${item}</span><div class="flex gap-1">${['A','B','C','D'].map(g => `<button type="button" onclick="setScore('ibadah','${item.replace(/'/g,"\\'")}','${g}')" class="w-7 h-7 rounded-lg font-bold ${val === g ? 'bg-teal-700 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${g}</button>`).join('')}</div></div>`;
   }).join('');
 
   document.getElementById('form-akhlak-list').innerHTML = AKHLAK_ITEMS.map((item, idx) => {
-    const val = rep.akhlak[item] || 'A';
-    return `<div class="py-2 flex items-center justify-between gap-2 text-xs"><span class="font-semibold text-slate-700">${idx + 1}. ${item}</span><div class="flex gap-1">${['A','B','C','D'].map(g => `<button type="button" onclick="setScore('akhlak','${item.replace(/'/g,"\\'")}','${g}')" class="w-7 h-7 rounded-lg font-bold ${val === g ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-600'}">${g}</button>`).join('')}</div></div>`;
+    const val = rep.akhlak[item] || '';
+    return `<div class="py-2 flex items-center justify-between gap-2 text-xs"><span class="font-semibold text-slate-700">${idx + 1}. ${item}</span><div class="flex gap-1">${['A','B','C','D'].map(g => `<button type="button" onclick="setScore('akhlak','${item.replace(/'/g,"\\'")}','${g}')" class="w-7 h-7 rounded-lg font-bold ${val === g ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${g}</button>`).join('')}</div></div>`;
   }).join('');
 
   document.getElementById('input-catatan').value = rep.catatan || '';
@@ -741,6 +760,7 @@ function setBacaanGrade(g) { ensureReportData().quran.__bacaan_grade = g; saveCu
 function setScore(cat, item, g) { ensureReportData()[cat][item] = g; saveCurrentReport(false); renderAssessmentForm(); }
 function bulkSetQuran(g) { CURRICULUM[getCurrKey()].quran.forEach(s => ensureReportData().quran[s] = g); saveCurrentReport(false); renderAssessmentForm(); }
 function bulkSetIbadah(g) { CURRICULUM[getCurrKey()].ibadah.forEach(i => ensureReportData().ibadah[i] = g); saveCurrentReport(false); renderAssessmentForm(); }
+function bulkSetAkhlak(g) { AKHLAK_ITEMS.forEach(a => ensureReportData().akhlak[a] = g); saveCurrentReport(false); renderAssessmentForm(); }
 function updateCatatan(v) { ensureReportData().catatan = v; saveCurrentReport(false); renderRaporPreview(); }
 
 // ==================== TARIK NILAI OTOMATIS DARI LOG ABSENSI SHOLAT ====================
@@ -806,27 +826,44 @@ function generateAutoNote() {
   const parts = [];
 
   const bLevel = rep.quran.__bacaan_level || "Al-Qur'an";
-  const bGrade = rep.quran.__bacaan_grade || 'A';
-  if (bLevel === "Al-Qur'an") {
-    if (bGrade === 'A') parts.push(`Alhamdulillah, ananda ${nama} sudah mampu membaca Al-Qur'an dengan sangat lancar dan tartil.`);
-    else if (bGrade === 'B') parts.push(`Alhamdulillah, ananda ${nama} sudah mampu membaca Al-Qur'an dengan baik, terus tingkatkan kesempurnaan tajwidnya.`);
-    else parts.push(`Ananda ${nama} sudah berada pada tingkat membaca Al-Qur'an, namun masih perlu bimbingan rutin untuk melancarkan bacaan dan tajwid.`);
-  } else {
-    parts.push(`Ananda ${nama} saat ini berada pada tahap pembelajaran membaca Al-Qur'an tingkat ${bLevel} (predikat ${bGrade}) dan perlu pendampingan rutin agar segera lancar menuju tingkat berikutnya.`);
+  const bGrade = rep.quran.__bacaan_grade || '';
+  if (bGrade) {
+    if (bLevel === "Al-Qur'an") {
+      if (bGrade === 'A') parts.push(`Alhamdulillah, ananda ${nama} sudah mampu membaca Al-Qur'an dengan sangat lancar dan tartil.`);
+      else if (bGrade === 'B') parts.push(`Alhamdulillah, ananda ${nama} sudah mampu membaca Al-Qur'an dengan baik, terus tingkatkan kesempurnaan tajwidnya.`);
+      else parts.push(`Ananda ${nama} sudah berada pada tingkat membaca Al-Qur'an, namun masih perlu bimbingan rutin untuk melancarkan bacaan dan tajwid.`);
+    } else {
+      parts.push(`Ananda ${nama} saat ini berada pada tahap pembelajaran membaca Al-Qur'an tingkat ${bLevel} (predikat ${bGrade}) dan perlu pendampingan rutin agar segera lancar menuju tingkat berikutnya.`);
+    }
   }
 
-  const weakSurahs = curr.quran.filter(s => (rep.quran[s] || 'A') === 'C' || (rep.quran[s] || 'A') === 'D');
-  if (weakSurahs.length === 0) parts.push(`Target hafalan surat pendek semester ini telah tuntas dengan baik.`);
-  else if (weakSurahs.length <= 5) parts.push(`Pada hafalan surat pendek, ananda perlu melakukan murojaah pada QS. ${weakSurahs.join(', ')}.`);
-  else parts.push(`Pada hafalan surat pendek, ananda perlu melakukan murojaah intensif pada ${weakSurahs.length} surat (antara lain QS. ${weakSurahs.slice(0, 4).join(', ')}, dan ${weakSurahs.length - 4} surat lainnya).`);
+  const gradedSurahs = curr.quran.filter(s => rep.quran[s]);
+  const weakSurahs = curr.quran.filter(s => rep.quran[s] === 'C' || rep.quran[s] === 'D');
+  if (gradedSurahs.length > 0) {
+    if (weakSurahs.length === 0 && gradedSurahs.length === curr.quran.length) parts.push(`Target hafalan surat pendek semester ini telah tuntas dengan baik.`);
+    else if (weakSurahs.length === 0) parts.push(`Hafalan surat pendek yang telah disetorkan berjalan baik, lanjutkan menyelesaikan sisa target hafalan semester ini.`);
+    else if (weakSurahs.length <= 5) parts.push(`Pada hafalan surat pendek, ananda perlu melakukan murojaah pada QS. ${weakSurahs.join(', ')}.`);
+    else parts.push(`Pada hafalan surat pendek, ananda perlu melakukan murojaah intensif pada ${weakSurahs.length} surat (antara lain QS. ${weakSurahs.slice(0, 4).join(', ')}, dan ${weakSurahs.length - 4} surat lainnya).`);
+  }
 
-  const weakIbadah = curr.ibadah.filter(i => (rep.ibadah[i] || 'A') === 'C' || (rep.ibadah[i] || 'A') === 'D');
-  if (weakIbadah.length === 0) parts.push(`Materi ibadah praktis dan doa harian telah dikuasai dengan baik.`);
-  else parts.push(`Pada aspek ibadah praktis, materi ${weakIbadah.join(', ')} belum tuntas dan perlu bimbingan hafalan serta praktik lebih lanjut.`);
+  const gradedIbadah = curr.ibadah.filter(i => rep.ibadah[i]);
+  const weakIbadah = curr.ibadah.filter(i => rep.ibadah[i] === 'C' || rep.ibadah[i] === 'D');
+  if (gradedIbadah.length > 0) {
+    if (weakIbadah.length === 0 && gradedIbadah.length === curr.ibadah.length) parts.push(`Materi ibadah praktis dan doa harian telah dikuasai dengan baik.`);
+    else if (weakIbadah.length > 0) parts.push(`Pada aspek ibadah praktis, materi ${weakIbadah.join(', ')} belum tuntas dan perlu bimbingan hafalan serta praktik lebih lanjut.`);
+  }
 
-  const weakAkhlak = AKHLAK_ITEMS.filter(a => (rep.akhlak[a] || 'A') === 'C' || (rep.akhlak[a] || 'A') === 'D');
-  if (weakAkhlak.length === 0) parts.push(`Pertahankan keistiqomahan sholat berjamaah dan akhlak mulia di sekolah maupun di rumah.`);
-  else parts.push(`Mohon dukungan orang tua untuk lebih membiasakan kedisiplinan pada aspek ${weakAkhlak.join(', ')}.`);
+  const gradedAkhlak = AKHLAK_ITEMS.filter(a => rep.akhlak[a]);
+  const weakAkhlak = AKHLAK_ITEMS.filter(a => rep.akhlak[a] === 'C' || rep.akhlak[a] === 'D');
+  if (gradedAkhlak.length > 0) {
+    if (weakAkhlak.length === 0 && gradedAkhlak.length === AKHLAK_ITEMS.length) parts.push(`Pertahankan keistiqomahan sholat berjamaah dan akhlak mulia di sekolah maupun di rumah.`);
+    else if (weakAkhlak.length > 0) parts.push(`Mohon dukungan orang tua untuk lebih membiasakan kedisiplinan pada aspek ${weakAkhlak.join(', ')}.`);
+  }
+
+  if (parts.length === 0) {
+    alert('Silakan isi nilai murid terlebih dahulu sebelum menyusun catatan otomatis.');
+    return;
+  }
 
   const finalNote = parts.join(' ');
   document.getElementById('input-catatan').value = finalNote;
@@ -882,15 +919,21 @@ async function approveGuruAllClass() {
 }
 
 function evaluateSurahGroup(surahs, quranScores) {
-  let total = 0, needsReview = [];
+  let total = 0, gradedCount = 0, needsReview = [];
   surahs.forEach(s => {
-    const g = quranScores[s] || 'A';
-    total += GRADE_POINT[g] || 4;
-    if (g === 'C' || g === 'D') needsReview.push(s);
+    const g = quranScores[s] || '';
+    if (g && GRADE_POINT[g]) {
+      total += GRADE_POINT[g];
+      gradedCount++;
+      if (g === 'C' || g === 'D') needsReview.push(s);
+    }
   });
-  const avg = total / surahs.length;
+  if (gradedCount === 0) return { pred: '-', desc: 'Belum dinilai' };
+  const avg = total / gradedCount;
   const pred = avg < 1.5 ? 'D' : (avg < 2.5 ? 'C' : (avg < 3.5 ? 'B' : 'A'));
-  let desc = `${PREDICATE_DESC[pred]} (${surahs.length} surat)`;
+  let desc = gradedCount === surahs.length
+    ? `${PREDICATE_DESC[pred]} (${surahs.length} surat)`
+    : `${PREDICATE_DESC[pred]} (${gradedCount}/${surahs.length} surat dinilai)`;
   if (needsReview.length > 0) desc += ` — Perlu murojaah: ${needsReview.join(', ')}`;
   return { pred, desc };
 }
@@ -982,7 +1025,7 @@ function buildRaporPagesArray(stu, rombel, sem) {
   const tanggalRapor = document.getElementById('cfg-tanggal-rapor').value;
 
   const bLevel = rep.quran.__bacaan_level || "Al-Qur'an";
-  const bGrade = rep.quran.__bacaan_grade || 'A';
+  const bGrade = rep.quran.__bacaan_grade || '';
 
   const quranRows = curr.quranGroups
     ? curr.quranGroups.map((grp, i) => {
@@ -990,15 +1033,15 @@ function buildRaporPagesArray(stu, rombel, sem) {
         return `<tr><td class="text-center">${i + 1}</td><td><div class="font-semibold">${grp.label}</div><div class="text-[7.8pt] text-slate-600">${grp.surahs.join(', ')}</div></td><td class="text-center font-bold">${res.pred}</td><td>${res.desc}</td></tr>`;
       }).join('')
     : curr.quran.map((s, i) => {
-        const g = rep.quran[s] || 'A';
-        return `<tr><td class="text-center">${i + 1}</td><td>QS. ${s}</td><td class="text-center font-bold">${g}</td><td>${PREDICATE_DESC[g]}</td></tr>`;
+        const g = rep.quran[s] || '';
+        return `<tr><td class="text-center">${i + 1}</td><td>QS. ${s}</td><td class="text-center font-bold">${g || '-'}</td><td>${g ? PREDICATE_DESC[g] : 'Belum dinilai'}</td></tr>`;
       }).join('');
 
   const tablesABC = `
     <div class="font-bold text-xs uppercase mb-1">A. Aspek Penilaian Al-Qur'an</div>
     <table class="print-table w-full text-xs border border-slate-800 mb-2">
       <thead><tr class="bg-slate-100"><th class="w-9 text-center">No</th><th>1. Kemampuan Membaca Al-Qur'an</th><th class="w-20 text-center">Tingkatan</th><th class="w-16 text-center">Predikat</th><th>Keterangan Capaian</th></tr></thead>
-      <tbody><tr><td class="text-center">1</td><td class="font-semibold">Bacaan Al-Qur'an</td><td class="text-center font-bold">${bLevel}</td><td class="text-center font-bold">${bGrade}</td><td>${getBacaanDesc(bLevel, bGrade)}</td></tr></tbody>
+      <tbody><tr><td class="text-center">1</td><td class="font-semibold">Bacaan Al-Qur'an</td><td class="text-center font-bold">${bLevel}</td><td class="text-center font-bold">${bGrade || '-'}</td><td>${getBacaanDesc(bLevel, bGrade)}</td></tr></tbody>
     </table>
     <table class="print-table w-full text-xs border border-slate-800 mb-2.5">
       <thead><tr class="bg-slate-100"><th class="w-9 text-center">No</th><th>2. Menghafal Surat Pendek</th><th class="w-16 text-center">Predikat</th><th>Keterangan Capaian</th></tr></thead>
@@ -1007,12 +1050,12 @@ function buildRaporPagesArray(stu, rombel, sem) {
     <div class="font-bold text-xs uppercase mb-1">B. Aspek Penilaian Ibadah Praktis dan Pembiasaan</div>
     <table class="print-table w-full text-xs border border-slate-800 mb-2.5">
       <thead><tr class="bg-slate-100"><th class="w-9 text-center">No</th><th>Materi Ibadah Praktis & Doa Harian</th><th class="w-16 text-center">Predikat</th><th>Keterangan Capaian</th></tr></thead>
-      <tbody>${curr.ibadah.map((item, i) => { const g = rep.ibadah[item] || 'A'; return `<tr><td class="text-center">${i + 1}</td><td>${item}</td><td class="text-center font-bold">${g}</td><td>${PREDICATE_DESC[g]}</td></tr>`; }).join('')}</tbody>
+      <tbody>${curr.ibadah.map((item, i) => { const g = rep.ibadah[item] || ''; return `<tr><td class="text-center">${i + 1}</td><td>${item}</td><td class="text-center font-bold">${g || '-'}</td><td>${g ? PREDICATE_DESC[g] : 'Belum dinilai'}</td></tr>`; }).join('')}</tbody>
     </table>
     <div class="font-bold text-xs uppercase mb-1">C. Aspek Penilaian Akhlak dan Nilai-Nilai Religius</div>
     <table class="print-table w-full text-xs border border-slate-800 mb-2.5">
       <thead><tr class="bg-slate-100"><th class="w-9 text-center">No</th><th>Aspek Pembiasaan & Sikap Religius</th><th class="w-16 text-center">Predikat</th><th>Keterangan Capaian</th></tr></thead>
-      <tbody>${AKHLAK_ITEMS.map((item, i) => { const g = rep.akhlak[item] || 'A'; return `<tr><td class="text-center">${i + 1}</td><td>${item}</td><td class="text-center font-bold">${g}</td><td>${PREDICATE_DESC[g]}</td></tr>`; }).join('')}</tbody>
+      <tbody>${AKHLAK_ITEMS.map((item, i) => { const g = rep.akhlak[item] || ''; return `<tr><td class="text-center">${i + 1}</td><td>${item}</td><td class="text-center font-bold">${g || '-'}</td><td>${g ? PREDICATE_DESC[g] : 'Belum dinilai'}</td></tr>`; }).join('')}</tbody>
     </table>`;
 
   const wm = buildWatermarkHtml(stu, schoolName);
